@@ -1,19 +1,19 @@
 package com.example.unitapp.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.unitapp.controllers.FetchPropertyController
 import com.example.unitapp.databinding.ActivityMainBinding
 import com.example.unitapp.repository.PropertiesRepo
 import com.example.unitapp.service.PropertiesService
 import com.example.unitapp.viewmodel.PropertiesViewModel
 import com.example.unitapp.viewmodel.PropertyViewModelFactory
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), PropertyListAdapter.NavigateInterface {
 
     private val propertiesService = PropertiesService.instance
     private val propertiesRepo = PropertiesRepo(propertiesService)
@@ -37,5 +37,10 @@ class MainActivity : AppCompatActivity() {
         propertiesViewModel.loaderLiveData.observe(this) {
             binding.progressBar.isVisible = it
         }
+    }
+
+    override fun showDetailScreen(id: String) {
+        val intent = Intent(this, DetailScreen::class.java).putExtra("id", id)
+        startActivity(intent)
     }
 }

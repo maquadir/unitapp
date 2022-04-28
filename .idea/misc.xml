@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable-anydpi-v24/ic_bed_image.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-anydpi-v24/ic_car_image.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/bg_circle.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_detail_screen.xml" value="0.22712707519531256" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14583333333333334" />
         <entry key="app/src/main/res/layout/unit_view_holder.xml" value="0.25" />
       </map>

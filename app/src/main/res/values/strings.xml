@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">unitapp</string>
-    <string name="title">Unit title</string>
-    <string name="description">Unit Description</string>
+    <string name="app_name">propertyApp</string>
+    <string name="title">Property title</string>
+    <string name="description">Property Description</string>
+    <string name="unit_id">Id</string>
+    <string name="property_id_s">Property id %s</string>
 </resources>

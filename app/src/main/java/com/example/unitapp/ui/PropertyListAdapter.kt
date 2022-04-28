@@ -1,7 +1,5 @@
 package com.example.unitapp.ui
 
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
@@ -11,8 +9,12 @@ import com.bumptech.glide.request.target.Target
 import com.example.unitapp.databinding.UnitViewHolderBinding
 import com.example.unitapp.models.Data
 
-class PropertyListAdapter(private val data: List<Data>, private val context: Context) :
+class PropertyListAdapter(private val data: List<Data>, private val callback: NavigateInterface) :
     RecyclerView.Adapter<PropertyViewHolder>() {
+
+    interface NavigateInterface{
+        fun showDetailScreen(id: String)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PropertyViewHolder {
         val binding =
@@ -22,8 +24,8 @@ class PropertyListAdapter(private val data: List<Data>, private val context: Con
 
     override fun onBindViewHolder(holder: PropertyViewHolder, position: Int) {
         data[position].property_images.forEach { image ->
-            val imageView = AppCompatImageView(context)
-            Glide.with(context)
+            val imageView = AppCompatImageView(holder.itemView.context)
+            Glide.with(holder.itemView.context)
                 .load(image.attachment.medium.url)
                 .override(Target.SIZE_ORIGINAL, 700)
                 .into(imageView)
@@ -32,7 +34,7 @@ class PropertyListAdapter(private val data: List<Data>, private val context: Con
 
         holder.binding.unitTitle.text = data[position].agent.company_name
         holder.binding.unitAddress.text = data[position].location.address
-        Glide.with(context)
+        Glide.with(holder.itemView.context)
             .load(data[position].agent.avatar.small.url)
             .override(300, 300)
             .fitCenter()
@@ -41,7 +43,7 @@ class PropertyListAdapter(private val data: List<Data>, private val context: Con
         holder.binding.bathCount.text = data[position].bathrooms.toString()
         holder.binding.carCount.text = data[position].carspaces.toString()
         holder.binding.listItem.setOnClickListener {
-            Log.i("TAG", "Navigate to other screen")
+            callback.showDetailScreen(data[position].id)
         }
     }
 
