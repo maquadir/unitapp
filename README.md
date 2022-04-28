@@ -1,5 +1,5 @@
 # unitapp
-This is an Android Application written in Kotlin to display a collection of properties loaded from a JSON url.
+This is an Android Application written in Kotlin to display a collection of properties loaded from a JSON url. Display a Detail Screen with Property id when a property is clicked.
 
 # Installation
 Clone the repo and install the dependencies.
@@ -61,4 +61,7 @@ The View Binding Library is an Android Jetpack library that allows you to create
 # Screenshot
 
 <img width="314" alt="image" src="https://user-images.githubusercontent.com/19331629/165742648-09d4e84d-0bbc-4353-97c3-ad34c8674e97.png">
+
+<img width="321" alt="image" src="https://user-images.githubusercontent.com/19331629/165748603-fcb63536-fa9b-4c40-a077-4c68ac14ceec.png">
+
 
