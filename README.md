@@ -58,6 +58,9 @@ Constructor dependency injection has been used at multiple instances.It allows f
 ### View Binding
 The View Binding Library is an Android Jetpack library that allows you to create class files for the XML layouts.All the UIView elements in the layout are binded to the class program through view binding.
 
+# Testing
+New to MVVM Unit testing. It may not run successfully. One of the things i am looking forward to learn in a commercial space.
+
 # Screenshot
 
 <img width="314" alt="image" src="https://user-images.githubusercontent.com/19331629/165742648-09d4e84d-0bbc-4353-97c3-ad34c8674e97.png">
